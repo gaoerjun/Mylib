@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <style>
+        #transformDiv{
+            background: red;
+            border-radius: 10px;
+            box-shadow: 10px 10px 2px blue;
+            width: 300px;
+            height: 500px;
+            color:white;
+            text-align: center;
+            line-height: 200px;
+            transform: rotate(30deg) translate(50px,-100px) scale(0.5,0.5) skew(10deg,20deg);
+            /*transform: translate(50px,100px);*/
+            /*transform: scale(0.5,0.5);*/
+        }
+        .transitionDiv{
+            background: #0000ff;
+            width: 200px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            font-size: 1.2em;
+            color: white;
+            transition: width 1s,height 2s ,background 2s ,color 1s,line-height 2s,transform 5s;
+
+        }
+        .transitionDiv:hover{
+            width: 220px;
+            height: 80px;
+            line-height: 80px;
+            background: #ff0000;
+            font-size: 1.3em;
+            color: #000000;
+            transform: rotate(360deg);
+
+        }
+    </style>
+</head>
+<body>
+<div id="transformDiv">Holy Bible</div>
+
+<div class="transitionDiv">看看神奇的变换</div>
+</body>
+</html>
