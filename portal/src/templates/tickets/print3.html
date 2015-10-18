@@ -1,0 +1,39 @@
+<link href="../css/{{style}}/tickets/print3____versionStr__.css?ver=___versionStr__" type="text/css" rel="stylesheet">
+<div class="orderinfo">
+    <p style="font-size: 30px">{{baseinfo.ordertable}}</p>
+    <div class="shop-name">{{baseinfo.shopname}}</div>
+    <div class="topinfo">
+        <p>单号：{{baseinfo.orderSn}} &emsp;&emsp;&emsp;员工：收银员</p>
+        <p>时间：{{baseinfo.orderTime}}</p>
+    </div>
+</div>
+<table width="100%;" style="table-layout: fixed" class="menulist-table">
+    <thead >
+    <tr >
+        <th style="border-bottom: 1px dashed gray;" align="left">项目</th>
+        <th style="border-bottom: 1px dashed gray;" align="center" width="50px">数量</th>
+        <th style="border-bottom: 1px dashed gray;" align="right" width="50px">金额&emsp;</th>
+    </tr>
+    </thead>
+    <tbody
+        {{each menuinfo.menuList as $value i}}
+    <tr>
+        <td colspan="3">{{$value.name}}</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td align="center">{{$value.count}}</td>
+        <td align="right">{{$value.total_price}}.00</td>
+    </tr>
+    {{/each}}
+    </tbody>
+</table>
+<div class="total-price" style="margin-top: 30px">食品费：<span >{{menuinfo.totalPrice}}.00</span></div>
+<div class="total-price">折扣费：<span>-0.00</span></div>
+<div class="total-price">抹&emsp;零：<span>0.00</span></div>
+<div class="sepreat-line"></div>
+<div class="total-price">总&emsp;额：<span style="font-size: 24px;font-weight: bold">{{menuinfo.totalPrice}}.00</span></div>
+<div class="sepreat-line"></div>
+<div class="total-price">现金：<span>{{baseinfo.givemoney}}.00</span></div>
+<div class="total-price">找零：<span>{{baseinfo.leftmoney}}.00</span></div>
+<div class="welcom-tip">多谢惠顾！</div>

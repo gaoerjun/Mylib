@@ -1,0 +1,72 @@
+<link href="../css/{{style}}/tickets/index____versionStr__.css?ver=___versionStr__" type="text/css" rel="stylesheet">
+<div class="order-content">
+    <h1>订单小票生成工具</h1>
+    <form>
+        <table>
+            <tr>
+                <td class="td-index">餐馆名称：</td>
+                <td><input type="text" class="itp-text" name="name" placeholder="请输入餐馆名称"></td>
+            </tr>
+            <tr>
+                <td class="td-index">餐馆分类：</td>
+                <td>
+                    <select name="type" id="type_select">
+                        {{each typeList as $value i}}
+                        <option value="{{$value.value}}">{{$value.typename}}</option>
+                        {{/each}}
+                    </select>
+                </td>
+            </tr>
+            <tr style="display: none" id="soup_controller">
+                <td class="td-index">是否有汤类：</td>
+                <td>
+                    <label> <input type="radio" value="1" name="hasSoap" checked/> 是</label>
+                    <label> <input type="radio" value="0" name="hasSoap" /> 否</label>
+                </td>
+            </tr>
+            <tr style="display: none" id="wine_controller">
+                <td class="td-index">是否有酒水：</td>
+                <td>
+                    <label> <input type="radio" value="1" name="hasWine" checked /> 是</label>
+                    <label> <input type="radio" value="0" name="hasWine" /> 否</label>
+                </td>
+            </tr>
+            <tr style="display: none" id="table_controller">
+                <td class="td-index">是否收餐位费：</td>
+                <td>
+                    <label> <input type="radio" value="1" name="hasExtralFee" checked/> 是</label>
+                    <label> <input type="radio" value="0" name="hasExtralFee" /> 否</label>
+                </td>
+            </tr>
+            <tr >
+                <td class="td-index">点菜数量：</td>
+                <td><input type="text" class="itp-text" name="count" placeholder="请输入菜数量"></td>
+            </tr>
+            <tr >
+                <td class="td-index">时间：</td>
+                <td><input type="date" class="itp-text" name="date" placeholder="请选择日期">
+                    <select name="time">
+                        <option value="1">中午</option>
+                        <option value="2">下午</option>
+                    </select>
+                </td>
+            </tr>
+            <tr >
+                <td class="td-index">小票模板：</td>
+                <td>
+                    <select name="tickets_type">
+                        <option value="1">模板1</option>
+                        <option value="2">模板2</option>
+                        <option value="3">模板3</option>
+                        <option value="4">模板4</option>
+                        <option value="5">模板5</option>
+                    </select>
+                </td>
+            </tr>
+        </table>
+        <div class="btns">
+            <div class="submit-btn" id="do_submit">生成菜单 </div>
+        </div>
+    </form>
+    <iframe id="print_ifame" style="display: none;"></iframe>
+</div>

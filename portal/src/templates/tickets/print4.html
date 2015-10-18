@@ -1,0 +1,36 @@
+<link href="../css/{{style}}/tickets/print4____versionStr__.css?ver=___versionStr__" type="text/css" rel="stylesheet">
+<div class="shop-name">{{baseinfo.shopname}}</div>
+<div class="orderinfo">
+    <div class="topinfo">
+        <div class="top-tip">对账单  打印次数：第1次</div>
+        <div class="sepreat-line"></div>
+        <p>桌房名称: {{baseinfo.ordertable}} &emsp;&emsp; 桌号: {{baseinfo.ordertable}}  </p>
+        <p>交易流水号: {{baseinfo.orderSn}}</p>
+        <p>收银员: 管理员 &emsp;&emsp;&emsp;&emsp;  人数:{{baseinfo.persons}}   </p>
+        <p>结账日期: {{baseinfo.orderTime}}</p>
+    </div>
+</div>
+<div class="sepreat-line"></div>
+<table width="100%;" style="table-layout: fixed" class="menulist-table">
+    <tr style="margin-bottom: 10px">
+        <td>品名</td>
+        <td align="center" width="50px">数量</td>
+        <td align="right" width="50px">单价&emsp;</td>
+        <td align="right" width="50px">金额&emsp;</td>
+    <tr>
+        {{each menuinfo.menuList as $value i}}
+    <tr>
+        <td>{{$value.name}}</td>
+        <td align="center">{{$value.count}}.00</td>
+        <td align="right">{{$value.price}}.00</td>
+        <td align="right">{{$value.total_price}}.00</td>
+    </tr>
+    {{/each}}
+</table>
+<div class="sepreat-line"></div>
+<div class="total-price" style="text-indent: 100px">小计: <span style="float: right">{{menuinfo.totalPrice}}.00</span></div>
+<div class="total-price">合计：<span>{{menuinfo.totalPrice}}.00</span></div>
+<div class="sepreat-line"></div>
+<div class="total-price-show">应收：<span>{{menuinfo.totalPrice}}.00</span></div>
+<div class="sepreat-line"></div>
+<div class="welcom-tip">欢迎再次光临！</div>

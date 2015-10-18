@@ -1,0 +1,1 @@
+module.exports = exports = {tickets: {        options: {            cleancss: true,            ieCompat:true        },        files: [{            expand: true,            cwd: 'src/less/pingan',            src: ['*.less','**/*.less'],            dest: 'm/css/pingan',            ext: '_0.0.1.css'        }]    },}

@@ -1,0 +1,1 @@
+module.exports = exports = {tickets:{overwrite: true,src:['m/tickets/*.html','m/templates/tickets/*.js','m/templates/tickets/**/*.js','m/js/tickets/*.js','m/js/tickets/**/*.js'],replacements: [{from:'___versionStr__', to:'0.0.1'}]},seajs:{overwrite: true,src:['m/js/*.js'],replacements: [{from:'___versionStr__', to:'1.1.8'}]}}

@@ -1,0 +1,64 @@
+一、开发前准备
+    1.新portal采用grunt构建，grunt集成了混淆、压缩和发布等功能插件
+    2.进行portal开发之前，先确认本地安装node和npm到global （安装参见https://nodejs.org/）。
+    3.cd 到本工程根目录。 执行npm install （mac 需要sudo）
+    4.3执行完成之后 执行 grunt default 即可开始开发
+二，目录结构说明
+    1.本系统工程根目录下目录结构为：
+        --root dir
+           --m
+              --- **
+           --node_module
+              --- **
+           --sea-modules
+              --- **
+           --src
+              --- **
+           --tasks
+              --- **
+           Grintfile.js
+           package.json
+    2.目录结构说明
+        --m 目录为发布后的可应用的文件。不可直接修改，可通过修改src下对应的文件发布生成
+        --src 目录为源码目录，存放所有开发的源文件，详见三。
+        --sea-modules 存放框架级的js文件，包括seajs 、arttemplate、jQuery，普通开发者不要做修改
+        package.json 配置本工程依赖的node模块以及框架的一些配置项，其中"debug"项配置是否开启debug模式，默认为false，如果开发这需要调试可设置debug为true。
+        Grintfile.js 为grunt工具使用的配置文件
+        --tasks 目录下的文件为grunt工具需要的各个插件的配置文件
+        --node_module 为本地开发需要的node模块的源文件。该目录文件不提交到线上。
+
+三、src目录及开发说明：
+    1.views目录为最外层入口目录，目录下存放.html 文件，不同的文件夹存放不同文件的模板
+    2.views下的.html文件统一套用模板
+        <!DOCTYPE html>
+        <head>
+            <meta charset="utf-8" http-equiv="content-type">
+            <meta name="viewport" content="width=320, minimum-scale=1, maximum-scale=1 ,initial-scale=1,user-scalable=no">
+            <meta name="format-detection" content="telephone=no">
+            <meta name="apple-mobile-web-app-capable" content="yes">
+            <meta name="apple-mobile-web-app-status-bar-style" content="black">
+            <link rel="shortcut" type="image/x-icon" href="../images/favicon.ico">
+            <link rel="apple-touch-icon" href="../images/favicon.ico">
+            <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+            <script src="../../sea-modules/seajs/seajs/2.2.0/sea.js"></script>
+            <script src="../js/seaconfig.js"></script>
+            <script>
+                seajs.use("../js/XXXXXX/XXXX");
+            </script>
+        </head>
+        <body>
+        <div id="loadding-util" style="width: 200px;height: 200px;text-align: center;vertical-align: middle;margin: 100px auto" >
+            <img src="../images/loading.gif">
+        </div>
+        <div id="J_seajs_template_content">
+
+        </div>
+        </body>
+
+        其中../js/XXXXXXmodal/XXXXpage为加载的定制js文件路径。
+    3.框架下所有js通过seajs管理，按照CMD规范编写，引用时按需加载。 js文件存放到 /src/js/XXXXXXmodal/page.js
+    4.本框架采用data -> 模板的模式，模板采用arttemplate，模板文件存放在 /src/templates/目录下，目录结构同js的目录结构保持一致
+    5.本框架的样式采用less编写，less文件存放于 /src/less/目录下、 less下的文件按照不同的定制分目录
+    6.本框架所有图片资源文件存放于/src/images/目录下
+
+

@@ -1,0 +1,44 @@
+<link href="../css/{{style}}/tickets/print1____versionStr__.css?ver=___versionStr__" type="text/css" rel="stylesheet">
+<div class="orderinfo">
+    <div class="shop-name">{{baseinfo.shopname}}</div>
+    <div class="top-tip">消费凭证</div>
+    <div class="topinfo">
+        <p style="font-size: 20px">餐牌编号： {{baseinfo.ordertable}}</p>
+        <p>交易流水号：{{baseinfo.orderSn}}</p>
+        <p>人数：1 &emsp;&emsp;&emsp;打印次数：1</p>
+        <p>收银员： 000000</p>
+        <p>开台时间：{{baseinfo.orderTime}}</p>
+        <p>结账时间：{{baseinfo.orderTime}}</p>
+    </div>
+</div>
+<div class="sepreat-line"></div>
+<table width="100%;" style="table-layout: fixed" class="menulist-table">
+    <tr>
+        <td style="width: 30px">序</td>
+        <td>菜品</td>
+        <td align="center" width="50px">数量</td>
+        <td align="right" width="50px">单价&emsp;</td>
+        <td align="right" width="50px">金额&emsp;</td>
+    <tr>
+        {{each menuinfo.menuList as $value i}}
+    <tr>
+        <td>{{i+1}}</td>
+        <td colspan="4">{{$value.name}}</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td align="center">{{$value.count}}</td>
+        <td align="right">{{$value.price}}.00</td>
+        <td align="right">{{$value.total_price}}.00</td>
+    </tr>
+    {{/each}}
+</table>
+<div class="sepreat-line"></div>
+<div class="total-price">消费总金额：<span>{{menuinfo.totalPrice}}.00</span></div>
+<div class="total-price-show">应付总金额：<span>{{menuinfo.totalPrice}}.00</span></div>
+<div class="sepreat-line"></div>
+<div class="total-price">人民币：<span>{{baseinfo.givemoney}}.00</span></div>
+<div class="total-price">找零：<span>{{baseinfo.leftmoney}}.00</span></div>
+<div class="sepreat-line"></div>
+<div class="welcom-tip">谢谢惠顾，欢迎下次光临！</div>

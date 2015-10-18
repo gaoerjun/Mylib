@@ -1,0 +1,20 @@
+{
+    "name": "template",
+    "version": "1.0.0",
+    "dependencies": {
+        "tmodjs": "1.0.2"
+    },
+    "tmodjs-config": {
+        "output": "../../m/templates",
+        "charset": "utf-8",
+        "syntax": "simple",
+        "helpers": null,
+        "escape": true,
+        "compress": true,
+        "type": "cmd",
+        "runtime": "artTemplate.js",
+        "alias": null,
+        "minify": true,
+        "cache": true
+    }
+}

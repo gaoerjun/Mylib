@@ -1,0 +1,58 @@
+<ul class="login-box-unit">
+    {{ if login_tel}}
+    <li id="reg_username">
+        <div class="filterBg"></div>
+        <div class="boxItem">
+            <span class="signinBox_icon">
+                <img src="../images/login/name.png" style="width:20px;height:20px;">
+            </span>
+            <input class="fl" type="tel" name="username" id="username" placeholder="请输入手机号">
+        </div>
+    </li>
+    {{/if}}
+    {{ if login_pwd}}
+    <li id="reg_password">
+        <div class="filterBg"></div>
+        <div class="boxItem">
+            <span class="signinBox_icon">
+                <img src="../images/login/psw.png">
+            </span>
+            <input type="password" name="password" placeholder="请输入密码">
+        </div>
+    </li>
+    {{/if}}
+    {{ if login_wxpwd}}
+    <li >
+        <div class="filterBg"></div>
+        <div class="boxItem">
+            <span class="signinBox_icon">
+                <img src="../images/login/psw.png">
+            </span>
+            <input type="password" name="password" placeholder="请输入上网密码">
+        </div>
+    </li>
+    {{/if}}
+    {{ if login_code}}
+    <li id="reg_verifycode">
+        <div class="filterBg"></div>
+        <div class="boxItem">
+            <span class="signinBox_icon">
+                <img src="../images/login/msg.png">
+            </span>
+            <input type="text" name="verifycode" placeholder="请输入短信验证码" style="width:130px">
+            <span id="get_verifycode"><a class="get_verifycode">获取短信验证码</a></span>
+        </div>
+    </li>
+    {{/if}}
+</ul>
+<div class="action-btns">
+    <a href="javascript:void(0);" class="submit-btn" >{{submit_name}}</a>
+    {{if alowFree}}
+    <div class="freeLoginBtn">
+        <div class="freebg"></div>
+        <p><a href="javascript:void(0)" id="quickLoginBtn" class="quick_login">免注册体验</a></p>
+    </div>
+    {{/if}}
+</div>
+
+
