@@ -1,0 +1,76 @@
+<link href="../css/{{style}}/tickets/printlist____versionStr__.css?ver=___versionStr__" type="text/css" rel="stylesheet">
+<div class="orderinfo">
+    <table  width="100%;" style="table-layout: fixed" class="menulist-table">
+        <tr>
+            <td style="text-align: left;vertical-align: middle">
+                <img src="../images/logo2.jpg" style="max-width: 90%;max-height: 100%;vertical-align: middle"/>
+            </td>
+            <td width="80%">
+                <h1 style="font-size:24px;text-align:center;line-height: 26px">宾客账单（明细）</h1>
+                <p style="font-size: 16px;line-height: 28px;text-align: center;">莫泰-深圳福田口岸保税区桂花路</p>
+            </td>
+        </tr>
+    </table>
+    <div class="topinfo">
+        <p>日期:</p>
+        <table  width="100%;" style="table-layout: fixed;font-size: 14px;" class="menulist-table">
+            <tr>
+                <td style="text-align: left;vertical-align: middle">
+                    {{baseinfo.orderTime}}
+                </td>
+                <td style="text-align: right">
+                    {{baseinfo.Sn}}
+                </td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="sepreat-line"></div>
+<table  width="100%;" style="table-layout: fixed;font-size: 12px;" class="menulist-table">
+    <tr>
+        <td style="text-align: left;">
+            姓名：{{baseinfo.user}}
+        </td>
+        <td width="50%">
+            账单号： {{baseinfo.orderSn}}
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align: left;">
+            到店： {{baseinfo.livein}}
+        </td>
+        <td width="50%">
+            离店： {{baseinfo.leftat}}
+        </td>
+    </tr>
+    <tr>
+        <td style="text-align: left;">
+            房号： {{baseinfo.room}}
+        </td>
+        <td width="50%">
+            消费总额：<span style="float: right">{{baseinfo.totalMoney}}.00</span>
+        </td>
+    </tr>
+</table>
+<div class="sepreat-line"></div>
+<table width="100%;" style="table-layout: fixed" class="menulist-table">
+    <tr>
+        <td>时&emsp;间</td>
+        <td align="center" width="">项&emsp;目</td>
+        <td align="right" width="">金额</td>
+    <tr>
+        {{each menuinfo as $value}}
+    <tr>
+        <td>{{$value.date}}</td>
+        <td align="center">房金</td>
+        <td align="right"> {{$value.money}}.00</td>
+
+    </tr>
+    {{/each}}
+</table>
+
+<div class="sepreat-line"></div>
+<p style="line-height: 80px;font-size: 12px">接待员： {{baseinfo.acceptUser}}&emsp;宾客签字：</p>
+<div class="sepreat-line" style="margin-top: 0px"></div>
+
+<div class="welcom-tip">www.homeinns.com&emsp;&emsp;&emsp;&emsp;400-820-3333</div>

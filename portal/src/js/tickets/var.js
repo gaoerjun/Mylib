@@ -302,9 +302,123 @@ define(function (require, exports, module) {
             }
         ]
     }
+
+
+    var user1infos=[
+        {
+            date:"2015-11-11",
+            money:300
+        },
+        {
+            date:"2015-11-10",
+            money:300
+        },
+        {
+            date:"2015-11-9",
+            money:300
+        },
+        {
+            date:"2015-11-8",
+            money:315
+        },
+        {
+            date:"2015-11-7",
+            money:315
+        },
+        {
+            date:"2015-11-6",
+            money:300
+        }
+        ,
+        {
+            date:"2015-11-5",
+            money:300
+        }
+        ,
+        {
+            date:"2015-11-4",
+            money:300
+        }
+        ,
+        {
+            date:"2015-11-3",
+            money:300
+        }
+        ,
+        {
+            date:"2015-11-2",
+            money:300
+        }
+        ,
+        {
+            date:"2015-11-1",
+            money:315
+        }
+        ,
+        {
+            date:"2015-10-31",
+            money:315
+        }
+        ,
+        {
+            date:"2015-10-30",
+            money:300
+        },
+        {
+            date:"2015-10-29",
+            money:300
+        },
+        {
+            date:"2015-10-28",
+            money:300
+        },
+        {
+            date:"2015-10-27",
+            money:300
+        }
+    ]
+    var user2infos=[
+
+        {
+            date:"2015-10-27",
+            money:300
+        }
+        ,
+        {
+            date:"2015-10-26",
+            money:300
+        },
+        {
+            date:"2015-10-25",
+            money:315
+        },
+        {
+            date:"2015-10-24",
+            money:315
+        },
+        {
+            date:"2015-10-23",
+            money:300
+        }
+        ,
+        {
+            date:"2015-10-22",
+            money:300
+        },
+        {
+            date:"2015-10-21",
+            money:300
+        },
+        {
+            date:"2015-10-20",
+            money:300
+        }
+    ]
     var exportType = {
         restarantType:restarantType,
-        menus:menus
+        menus:menus,
+        user1info :user1infos,
+        user2info:user2infos
     }
     module.exports=exportType;
 });

@@ -1,0 +1,25 @@
+<link href="../css/{{style}}/tickets/index____versionStr__.css?ver=___versionStr__" type="text/css" rel="stylesheet">
+<div class="order-content">
+    <h1>房票生成工具</h1>
+    <form>
+        <table>
+            <tr>
+                <td class="td-index">选择酒店：</td>
+                <td><select name="hotelid">
+                    <option value="1">如家酒店</option>
+                </select></td>
+            </tr>
+            <tr >
+                <td class="td-index">开票人：</td>
+                <td><select name="user">
+                    <option value="1">李伟</option>
+                    <option value="2">邓景马</option>
+                </select></td>
+            </tr>
+        </table>
+        <div class="btns">
+            <div class="submit-btn" id="do_submit">生成宾客账单 </div>
+        </div>
+    </form>
+    <iframe id="print_ifame" style="display: none;"></iframe>
+</div>
